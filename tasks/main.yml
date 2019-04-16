@@ -1,13 +1,14 @@
 ---
-- name: install cron (bionic support)
-  apt: name={{ item }} update_cache=yes state=present
-  with_items:
-    - cron
-
 - name: Check ci_inventory is defined
   fail:
     msg: ci_inventory is not defined
   when: ci_inventory is not defined
+
+- name: install cron (bionic support)
+  apt:
+    name: cron
+    cache_valid_time: "{{ 24 * 60 * 60 }}"
+    state: present
 
 - name: Create the ci user
   user:
