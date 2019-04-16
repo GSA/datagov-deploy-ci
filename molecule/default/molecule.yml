@@ -1,0 +1,28 @@
+---
+dependency:
+  name: galaxy
+  options:
+    role-file: requirements.yml
+driver:
+  name: docker
+lint:
+  name: yamllint
+platforms:
+  - name: ci-trusty
+    image: ubuntu:trusty
+  - name: ci-bionic
+    image: ubuntu:bionic
+provisioner:
+  name: ansible
+  lint:
+    name: ansible-lint
+  inventory:
+    group_vars:
+      all:
+        ci_inventory: inventories/example
+scenario:
+  name: default
+verifier:
+  name: testinfra
+  lint:
+    name: flake8
