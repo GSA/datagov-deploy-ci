@@ -2,6 +2,9 @@
 galaxy_info:
   author: General Services Administration
   license: CC0-1.0
+  description: Configure CI executor for Data.gov platform.
+  platforms:
+    - name: ubuntu
 
   min_ansible_version: 1.2
 
