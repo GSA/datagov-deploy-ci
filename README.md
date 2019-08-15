@@ -1,3 +1,5 @@
+[![CircleCI](https://circleci.com/gh/GSA/datagov-deploy-ci.svg?style=svg)](https://circleci.com/gh/GSA/datagov-deploy-ci)
+
 # datagov-deploy-ci
 
 Configures a host to automatically run the ansible playbooks and log the
